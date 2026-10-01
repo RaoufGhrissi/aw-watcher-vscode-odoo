@@ -1,0 +1,44 @@
+{
+    "name": "aw-watcher-vscode-odoo",
+    "displayName": "ActivityWatch watcher (Odoo)",
+    "description": "Tracks the time spent in VS Code per Git branch for ActivityWatch, the same way as the Odoo web watcher.",
+    "version": "0.1.0",
+    "publisher": "raoufghrissi",
+    "license": "MPL-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RaoufGhrissi/aw-watcher-vscode-odoo"
+    },
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "extensionKind": [
+        "ui"
+    ],
+    "main": "./out/extension.js",
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "test": "npm run compile && mocha out/test/*.test.js",
+        "package": "vsce package",
+        "vscode:prepublish": "npm run compile"
+    },
+    "dependencies": {
+        "aw-client": "^0.4.1"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.10",
+        "@types/node": "^20.19.43",
+        "@types/vscode": "~1.85.0",
+        "@vscode/test-electron": "^3.1.0",
+        "@vscode/vsce": "^4.0.0",
+        "mocha": "^12.0.3",
+        "typescript": "~5.6"
+    }
+}
